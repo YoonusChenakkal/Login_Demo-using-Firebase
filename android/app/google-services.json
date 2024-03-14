@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "227565675976",
+    "project_id": "basicapp-3dfa8",
+    "storage_bucket": "basicapp-3dfa8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227565675976:android:52dea5eda613702b624cfd",
+        "android_client_info": {
+          "package_name": "com.example.authetication_sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUV0BXgAfEoOGv9kHllHNVICn1v9rtmjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227565675976:android:a09672063955c9fe624cfd",
+        "android_client_info": {
+          "package_name": "com.example.firebase_auth_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUV0BXgAfEoOGv9kHllHNVICn1v9rtmjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

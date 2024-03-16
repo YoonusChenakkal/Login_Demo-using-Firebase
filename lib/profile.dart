@@ -1,10 +1,18 @@
+import 'package:authetication_sample/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
+  signOut(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => loginScreen(),),(route) => false,);
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         body: SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -80,7 +88,7 @@ class Profile extends StatelessWidget {
                       height: 15,
                     ),
                     Text(
-                      'yoonus123@gmail.com',
+                     'yoonusyzyoons@gmail.com',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
@@ -96,7 +104,7 @@ class Profile extends StatelessWidget {
                       width: 125,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          signOut(context);
                         },
                         style: ButtonStyle(
                             shape: MaterialStatePropertyAll<

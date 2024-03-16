@@ -1,6 +1,9 @@
+
 import 'package:authetication_sample/firebase_options.dart';
-import 'package:authetication_sample/sections/signIn_side.dart';
-import 'package:authetication_sample/sections/signUp_side.dart';
+import 'package:authetication_sample/profile.dart';
+import 'package:authetication_sample/sections/signIn.dart';
+import 'package:authetication_sample/sections/signUp.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
@@ -15,11 +18,16 @@ void main() async {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+   MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: loginScreen());
+    User? user = _auth.currentUser;
+    return MaterialApp(
+  home:user!=null ?Profile():loginScreen(),
+
+   );
   }
 }
 
@@ -43,7 +51,6 @@ class loginScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-            
             bottom: 0,
             child: FlipCard(
               flipOnTouch: false,

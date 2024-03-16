@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class text_field extends StatelessWidget {
   String title;
   double width;
   double height;
   Color color;
-  TextEditingController? controller;
-  text_field(
-    {
+  TextEditingController controller;
+  var data;
+  // TextEditingController? controller;
+  TextInputType keyboardType;
+  text_field({
+    required this.controller,
+    this.data,
     super.key,
     required this.title,
     required this.width,
     this.height = 40,
-    this.color = const Color.fromARGB(255, 123, 123, 123), required this.controller,
+    this.color = const Color.fromARGB(255, 123, 123, 123),
+    required this.keyboardType,
+    // this.controller,
   });
 
   @override
@@ -28,7 +35,7 @@ class text_field extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                color: color, //Color(0xFF7B7B7B),
+                color: color, 
                 fontSize: 15,
                 fontFamily: 'Lexend',
                 fontWeight: FontWeight.w500,
@@ -55,6 +62,9 @@ class text_field extends StatelessWidget {
               height: height, //40
               width: width, // 340
               child: TextField(
+                onChanged: data,
+
+                keyboardType: keyboardType,
                 controller: controller,
                 style: TextStyle(fontSize: 20),
                 decoration: InputDecoration(
